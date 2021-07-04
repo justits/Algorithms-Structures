@@ -1,4 +1,4 @@
-def merge(left, right):
+def _merge(left, right):
     merged = []
     i = 0
     j = 0
@@ -18,6 +18,7 @@ def merge_sort(a):
     size_a = len(a)
     if size_a <= 1:
         return a
-    left = merge_sort(a[:size_a // 2])
-    right = merge_sort(a[size_a // 2:])
-    return merge(left, right)
+    mid = size_a // 2
+    left = merge_sort(a[:mid])
+    right = merge_sort(a[mid:])
+    return _merge(left, right)
