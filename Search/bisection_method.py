@@ -17,7 +17,7 @@ def bisection_method(mono_increasing_fun, search_elem):
         num_of_iter += 1
         decreasing_slice *= 2
 
-    for i in range(num_of_iter):
+    for _ in range(num_of_iter):
         med = array_slice.med()
         if mono_increasing_fun(med) < search_elem:
             array_slice.left = med
